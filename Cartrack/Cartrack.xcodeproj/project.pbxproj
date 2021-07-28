@@ -22,6 +22,7 @@
 		7CF54DD826B08153006DB339 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DD726B08153006DB339 /* Parsing.swift */; };
 		7CF54DDE26B12573006DB339 /* UsersListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DDD26B12573006DB339 /* UsersListRequest.swift */; };
 		7CF54DE426B12618006DB339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DE326B12618006DB339 /* User.swift */; };
+		7CF54DE926B128F4006DB339 /* UsersListWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DE826B128F4006DB339 /* UsersListWebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7CF54DD726B08153006DB339 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		7CF54DDD26B12573006DB339 /* UsersListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListRequest.swift; sourceTree = "<group>"; };
 		7CF54DE326B12618006DB339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7CF54DE826B128F4006DB339 /* UsersListWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListWebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				7CF54DDD26B12573006DB339 /* UsersListRequest.swift */,
+				7CF54DE826B128F4006DB339 /* UsersListWebService.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				7CF54DD826B08153006DB339 /* Parsing.swift in Sources */,
 				7CF54DCC26B07238006DB339 /* NetworkErrors.swift in Sources */,
 				7CF54D9526B07130006DB339 /* AppDelegate.swift in Sources */,
+				7CF54DE926B128F4006DB339 /* UsersListWebService.swift in Sources */,
 				7CF54DE426B12618006DB339 /* User.swift in Sources */,
 				7CF54D9726B07130006DB339 /* SceneDelegate.swift in Sources */,
 			);
