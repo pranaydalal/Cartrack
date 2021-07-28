@@ -8,7 +8,7 @@
 import Foundation
 
 protocol URLRequestConvertible {
-    func expressAsURLRequest() -> URLRequest
+    func expressAsURLRequest() throws -> URLRequest
 }
 
 protocol Request: URLRequestConvertible {

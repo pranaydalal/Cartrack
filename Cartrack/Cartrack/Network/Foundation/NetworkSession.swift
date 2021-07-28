@@ -19,28 +19,32 @@ extension URLSession: NetworkSession {
     
     func call(_ request: URLRequestConvertible, then completionHandler: @escaping ((Result<Data, Error>) -> Void)) {
         
-        let urlRequest = request.expressAsURLRequest()
-        
-        let completion: DataTaskCompletionCallback = { data, response, error in
-            
-            if let requestError = error {
-                completionHandler(.failure(requestError))
-                return
+        do {
+            let urlRequest = try request.expressAsURLRequest()
+            debugPrint(urlRequest.url!)
+            let completion: DataTaskCompletionCallback = { data, response, error in
+                
+                if let requestError = error {
+                    completionHandler(.failure(requestError))
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse, type(of: self).acceptableStatusCodes.contains(httpResponse.statusCode) else {
+                    completionHandler(.failure(NetworkErrors.ResponseError.noDataAvailable))
+                    return
+                }
+                
+                guard let data = data else {
+                    completionHandler(.failure(NetworkErrors.ResponseError.noDataAvailable))
+                    return
+                }
+                
+                completionHandler(.success(data))
             }
             
-            guard let httpResponse = response as? HTTPURLResponse, type(of: self).acceptableStatusCodes.contains(httpResponse.statusCode) else {
-                completionHandler(.failure(NetworkErrors.ResponseError.noDataAvailable))
-                return
-            }
-            
-            guard let data = data else {
-                completionHandler(.failure(NetworkErrors.ResponseError.noDataAvailable))
-                return
-            }
-            
-            completionHandler(.success(data))
+            self.dataTask(with: urlRequest, completionHandler: completion).resume()
+        } catch {
+            completionHandler(.failure(error))
         }
-        
-        self.dataTask(with: urlRequest, completionHandler: completion).resume()
     }
 }
