@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CD3674A26B18743007DDCE6 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3674926B18743007DDCE6 /* UserTests.swift */; };
 		7CF54D9526B07130006DB339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54D9426B07130006DB339 /* AppDelegate.swift */; };
 		7CF54D9726B07130006DB339 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54D9626B07130006DB339 /* SceneDelegate.swift */; };
 		7CF54D9926B07130006DB339 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54D9826B07130006DB339 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7CD3674926B18743007DDCE6 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		7CF54D9126B07130006DB339 /* Cartrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF54D9426B07130006DB339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF54D9626B07130006DB339 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				7CF54DAD26B07134006DB339 /* Info.plist */,
 				7CFDC59B26B132E00059989A /* NetworkSessionMock.swift */,
 				7CFDC5A826B149D20059989A /* UsersListRequestTests.swift */,
+				7CD3674926B18743007DDCE6 /* UserTests.swift */,
 			);
 			path = CartrackTests;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD3674A26B18743007DDCE6 /* UserTests.swift in Sources */,
 				7CFDC5A926B149D20059989A /* UsersListRequestTests.swift in Sources */,
 				7CF54DAC26B07134006DB339 /* CartrackTests.swift in Sources */,
 				7CFDC59C26B132E00059989A /* NetworkSessionMock.swift in Sources */,
