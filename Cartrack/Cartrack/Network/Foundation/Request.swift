@@ -49,6 +49,17 @@ extension DataRequest {
         
         network.call(self) { result in
             
+            switch result {
+            case .success( let data):
+                do {
+                    let result = try parse(toType: Response.self, data: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(NetworkErrors.ParsingError.unableToParse))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

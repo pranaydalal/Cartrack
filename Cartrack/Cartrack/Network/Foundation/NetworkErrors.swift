@@ -25,4 +25,20 @@ enum NetworkErrors {
             }
         }
     }
+    
+    /**
+     ParsingError, currently supporting unableToParse, can be expanded to add more types of errors.
+     
+        - unableToParse: Returned when received server response data could not be parsed.
+     */
+    enum ParsingError: Error {
+        case unableToParse
+        
+        var errorDescription: String? {
+            switch self {
+            case .unableToParse:
+                return "Something went wrong.\n Please try again later"
+            }
+        }
+    }
 }
