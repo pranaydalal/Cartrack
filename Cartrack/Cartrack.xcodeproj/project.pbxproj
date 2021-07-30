@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7C97BB8726B31D91002C9F49 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */; };
-		7CB26C1726B42B2D00E303CF /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB26C1626B42B2D00E303CF /* UITextField.swift */; };
 		7CD3674A26B18743007DDCE6 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3674926B18743007DDCE6 /* UserTests.swift */; };
 		7CD3675426B27E11007DDCE6 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3675326B27E11007DDCE6 /* DatabaseHandler.swift */; };
 		7CD3675D26B2B266007DDCE6 /* CarTrackDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7CD3675C26B2B266007DDCE6 /* CarTrackDB.sqlite */; };
@@ -51,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		7CB26C1626B42B2D00E303CF /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		7CD3674926B18743007DDCE6 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		7CD3675326B27E11007DDCE6 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		7CD3675C26B2B266007DDCE6 /* CarTrackDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarTrackDB.sqlite; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		7C97BB8326B31CDF002C9F49 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				7CB26C1526B42A8200E303CF /* Utilities */,
 				7CF54D9826B07130006DB339 /* LoginViewController.swift */,
 				7CF54D9A26B07130006DB339 /* Main.storyboard */,
 			);
@@ -122,14 +119,6 @@
 				7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7CB26C1526B42A8200E303CF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				7CB26C1626B42B2D00E303CF /* UITextField.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		7CD3674E26B27334007DDCE6 /* Database */ = {
@@ -383,7 +372,6 @@
 				7CF54DCE26B07238006DB339 /* Request.swift in Sources */,
 				7CF54DCD26B07238006DB339 /* NetworkSession.swift in Sources */,
 				7CF54DD826B08153006DB339 /* Parsing.swift in Sources */,
-				7CB26C1726B42B2D00E303CF /* UITextField.swift in Sources */,
 				7CF54DCC26B07238006DB339 /* NetworkErrors.swift in Sources */,
 				7C97BB8726B31D91002C9F49 /* LoginViewModel.swift in Sources */,
 				7CF54D9526B07130006DB339 /* AppDelegate.swift in Sources */,
