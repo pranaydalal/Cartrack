@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
         self.bindViewModel()
     }
 
-    func bindViewModel() {
+    private func bindViewModel() {
         self.loginViewModel.didLoginFailed = { [weak self] in
             guard let _self = self else { return }
             _self.launchLoginFailed()
@@ -101,6 +101,43 @@ class LoginViewController: UIViewController {
                 _self.passwordStackView.addArrangedSubview(_self.passwordErrorLabel)
             }
         }
+        
+        self.loginViewModel.didLaunchCountryPicker = { [weak self] country in
+            guard let _self = self else { return }
+            
+            _self.launchCountryPicker(country)
+        }
+        
+        self.loginViewModel.didUpdateCountry = { [weak self] country in
+            guard let _self = self else { return }
+            
+            _self.countryTextField.text = country
+        }
+    }
+    
+    private func launchCountryPicker(_ country: String) {
+        let countryPickerviewController = CountryPickerViewController()
+        countryPickerviewController.modalPresentationStyle = .overCurrentContext
+        countryPickerviewController.modalTransitionStyle = .crossDissolve
+        countryPickerviewController.delegate = self
+        countryPickerviewController.selectCountryIfAvailable(country: country)
+        self.present(countryPickerviewController, animated: true, completion: nil)
+    }
+    
+    private func launchLoginFailed() {
+        let alert = UIAlertController(title: "Incorrect username or password", message: nil, preferredStyle: .alert)
+        alert.view.accessibilityIdentifier = "loginFailed"
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func launchLoginSuccess() {
+        let alert = UIAlertController(title: "Login Success", message: nil, preferredStyle: .alert)
+        alert.view.accessibilityIdentifier = "loginSuccess"
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -113,22 +150,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func passwordTextFieldChanged(_ sender: Any) {
         self.loginViewModel.password = self.passwordTextField.text ?? ""
-    }
-    
-    func launchLoginFailed() {
-        let alert = UIAlertController(title: "Incorrect username or password", message: nil, preferredStyle: .alert)
-        alert.view.accessibilityIdentifier = "loginFailed"
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func launchLoginSuccess() {
-        let alert = UIAlertController(title: "Login Success", message: nil, preferredStyle: .alert)
-        alert.view.accessibilityIdentifier = "loginSuccess"
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -144,5 +165,11 @@ extension LoginViewController: UITextFieldDelegate {
         }
         self.loginViewModel.selectCountry()
         return false
+    }
+}
+
+extension LoginViewController: CountryPickerViewControllerDelegate {
+    func countryPickerView(_ countryPickerView: CountryPickerViewController, didSelectCountry country: String) {
+        self.loginViewModel.country = country
     }
 }

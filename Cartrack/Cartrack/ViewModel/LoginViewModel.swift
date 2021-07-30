@@ -44,6 +44,12 @@ final class LoginViewModel {
         }
     }
     
+    var country : String = "" {
+        didSet {
+            self.didUpdateCountry?(country)
+        }
+    }
+    
     required init(with accountService: UserAccountService) {
         self.accountService = accountService
     }
@@ -61,7 +67,6 @@ final class LoginViewModel {
     }
     
     func selectCountry() {
-//        self.didLaunchCountryPicker?(country)
+        self.didLaunchCountryPicker?(country)
     }
-    
 }
