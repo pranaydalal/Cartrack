@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField! {
         didSet {
             self.userNameTextField.delegate = self
+            self.userNameTextField.addDoneButton()
         }
     }
     
@@ -36,6 +37,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             self.passwordTextField.delegate = self
+            self.passwordTextField.addDoneButton()
         }
     }
     private var passwordErrorLabel: UILabel = {
@@ -50,6 +52,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var countryTextField: UITextField! {
         didSet {
             self.countryTextField.delegate = self
+            self.countryTextField.addDoneButton()
         }
     }
     
