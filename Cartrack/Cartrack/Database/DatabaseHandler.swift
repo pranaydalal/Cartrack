@@ -8,7 +8,12 @@
 import Foundation
 import SQLite3
 
-class DatabaseHandler {
+protocol UserAccountService {
+    func authenticateUser(withUserName username: String, andPassword password: String) -> Bool
+    func registerUser(withUserName username: String, andPassword password: String, andCountry country: String) -> Bool
+}
+
+class UserDatabaseHandler: UserAccountService {
 
     static private let databaseName = "CarTrackDB"
     static private let databaseExtension = "sqlite"
@@ -26,14 +31,14 @@ class DatabaseHandler {
         opaquePointer = self.establishConnectionToDatabase()
         
         // hardcoding user credentials as registration screen is in future scope
-        self.registerUser(with: "ABC", password: "abc@123", country: "Portugal")
+        self.registerUser(withUserName: "ABC", andPassword: "abc@123", andCountry: "Portugal")
     }
 
     /// Authenticate user
-    func authenticateUser(with username: String, password: String, country: String) -> Bool {
+    func authenticateUser(withUserName username: String, andPassword password: String) -> Bool {
         var opaqueQuery: OpaquePointer?
         let selfType = type(of: self)
-        let query = "select * from \(selfType.userTable) where \(selfType.userNameColumn) = '\(username)' and \(selfType.passwordColumn) = '\(password)' and \(selfType.countryColumn) = '\(country)'"
+        let query = "select * from \(selfType.userTable) where \(selfType.userNameColumn) = '\(username)' and \(selfType.passwordColumn) = '\(password)'"
         
         if sqlite3_prepare_v2(opaquePointer, query, -1, &opaqueQuery, nil) == SQLITE_OK {
             if  sqlite3_step(opaqueQuery) == SQLITE_ROW {
@@ -48,7 +53,7 @@ class DatabaseHandler {
     }
     
     /// Register user
-    func registerUser(with username: String, password: String, country: String) -> Bool {
+    func registerUser(withUserName username: String, andPassword password: String, andCountry country: String) -> Bool {
         let selfType = type(of: self)
         let query = "insert into \(selfType.userTable)(\(selfType.userNameColumn),\(selfType.passwordColumn),\(selfType.countryColumn)) values ('\(username)' , '\(password)' , '\(country)')"
         var opaqueQuery: OpaquePointer?

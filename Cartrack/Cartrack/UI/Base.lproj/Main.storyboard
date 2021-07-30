@@ -93,7 +93,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ik5-r2-wIH">
                                                                 <rect key="frame" x="0.0" y="266" width="382" height="69"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbN-H3-tlp">
+                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbN-H3-tlp">
                                                                         <rect key="frame" x="0.0" y="16" width="382" height="53"/>
                                                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
