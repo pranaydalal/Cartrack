@@ -102,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C97BB8326B31CDF002C9F49 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7CF54D9826B07130006DB339 /* LoginViewController.swift */,
+				7CF54D9A26B07130006DB339 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		7CD3674E26B27334007DDCE6 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,14 +151,13 @@
 		7CF54D9326B07130006DB339 /* Cartrack */ = {
 			isa = PBXGroup;
 			children = (
+				7C97BB8326B31CDF002C9F49 /* UI */,
 				7CD3674E26B27334007DDCE6 /* Database */,
 				7CF54DE226B12605006DB339 /* Model */,
 				7CF54DC726B07238006DB339 /* Network */,
 				7CD3675B26B2B194007DDCE6 /* Assets */,
 				7CF54D9426B07130006DB339 /* AppDelegate.swift */,
 				7CF54D9626B07130006DB339 /* SceneDelegate.swift */,
-				7CF54D9826B07130006DB339 /* LoginViewController.swift */,
-				7CF54D9A26B07130006DB339 /* Main.storyboard */,
 				7CF54D9F26B07133006DB339 /* LaunchScreen.storyboard */,
 				7CF54DA226B07133006DB339 /* Info.plist */,
 			);
