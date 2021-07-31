@@ -133,11 +133,10 @@ class LoginViewController: UIViewController {
     }
     
     private func launchLoginSuccess() {
-        let alert = UIAlertController(title: "Login Success", message: nil, preferredStyle: .alert)
-        alert.view.accessibilityIdentifier = "loginSuccess"
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
+        let usersListViewController = UsersListViewController()
+        let navigationController = UINavigationController(rootViewController: usersListViewController)
+        
+        UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = navigationController
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
