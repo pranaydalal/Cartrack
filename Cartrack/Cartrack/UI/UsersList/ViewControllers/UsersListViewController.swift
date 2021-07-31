@@ -9,7 +9,7 @@ import UIKit
 
 class UsersListViewController: UITableViewController {
     
-    private let usersListViewModel = UsersListViewModel(with: UsersListWebService(baseURL: URL(string: "jsonplaceholder.typicode.com")!))
+    private let usersListViewModel = UsersListViewModel(with: UsersListWebService(baseURL: NetworkConstant.baseURL))
     private var users: [User]?
     
     override func viewDidLoad() {

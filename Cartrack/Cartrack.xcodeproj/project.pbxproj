@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C203D1B26B58A890078CEAE /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C203D1A26B58A890078CEAE /* UsersListViewModel.swift */; };
+		7C203D2A26B5FA0A0078CEAE /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C203D2926B5FA0A0078CEAE /* NetworkConstant.swift */; };
 		7C97BB8726B31D91002C9F49 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */; };
 		7CB26C2226B4340100E303CF /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB26C2126B4340100E303CF /* CountryPickerViewController.swift */; };
 		7CB26C2726B4346800E303CF /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB26C2626B4346800E303CF /* CountryPickerViewModel.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		7C203D1A26B58A890078CEAE /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
+		7C203D2926B5FA0A0078CEAE /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7CB26C2126B4340100E303CF /* CountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
 		7CB26C2626B4346800E303CF /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				7CF54DCB26B07238006DB339 /* Request.swift */,
 				7CF54DD226B075FF006DB339 /* RequestBuilder.swift */,
 				7CF54DD726B08153006DB339 /* Parsing.swift */,
+				7C203D2926B5FA0A0078CEAE /* NetworkConstant.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				7CF54DCC26B07238006DB339 /* NetworkErrors.swift in Sources */,
 				7C97BB8726B31D91002C9F49 /* LoginViewModel.swift in Sources */,
 				7C203D1B26B58A890078CEAE /* UsersListViewModel.swift in Sources */,
+				7C203D2A26B5FA0A0078CEAE /* NetworkConstant.swift in Sources */,
 				7CF54D9526B07130006DB339 /* AppDelegate.swift in Sources */,
 				7CF54DE926B128F4006DB339 /* UsersListWebService.swift in Sources */,
 				7CB26C2726B4346800E303CF /* CountryPickerViewModel.swift in Sources */,
