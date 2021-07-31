@@ -31,7 +31,7 @@ class UserDatabaseHandler: UserAccountService {
         opaquePointer = self.establishConnectionToDatabase()
         
         // hardcoding user credentials as registration screen is in future scope
-        self.registerUser(withUserName: "ABC", andPassword: "abc@123", andCountry: "Portugal")
+        self.registerUser(withUserName: "ABC123", andPassword: "abc@123", andCountry: "Portugal")
     }
 
     /// Authenticate user

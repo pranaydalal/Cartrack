@@ -19,7 +19,6 @@ class CountryPickerViewController : UIViewController {
     
     lazy var countryPickerView : UIPickerView = {
         let pickerView = UIPickerView()
-        pickerView.accessibilityIdentifier = "pickerView"
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.backgroundColor = .white
@@ -30,7 +29,6 @@ class CountryPickerViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.accessibilityIdentifier = "countryPickerView"
         self.setupUI()
         self.initialize()
         self.bindViewModel()

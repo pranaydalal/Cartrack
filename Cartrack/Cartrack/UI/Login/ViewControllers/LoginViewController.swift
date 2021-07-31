@@ -126,7 +126,6 @@ class LoginViewController: UIViewController {
     
     private func launchLoginFailed() {
         let alert = UIAlertController(title: "Incorrect username or password", message: nil, preferredStyle: .alert)
-        alert.view.accessibilityIdentifier = "loginFailed"
         let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
