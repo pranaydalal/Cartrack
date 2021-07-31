@@ -67,7 +67,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="emailLabel" destination="NNG-T9-r3a" id="e2R-gs-8zf"/>
                 <outlet property="profilePictureImageView" destination="vFf-Mv-ReE" id="eQW-1Z-vRN"/>
+                <outlet property="userNameLabel" destination="R9C-l5-AnI" id="XOf-lr-qJU"/>
                 <outlet property="wrapperView" destination="Oi7-L4-KWR" id="hhD-sq-wsx"/>
             </connections>
             <point key="canvasLocation" x="100.00000000000001" y="75"/>

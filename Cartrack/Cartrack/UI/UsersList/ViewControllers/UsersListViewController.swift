@@ -89,8 +89,8 @@ extension UsersListViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.reusableIdentifier, for: indexPath)
         cell.selectionStyle = .none
         
-        if let user = self.users?[indexPath.row] {
-            
+        if let user = self.users?[indexPath.row], let userTableViewCell = cell as? UserTableViewCell {
+            userTableViewCell.user = user
         }
         
         if indexPath.row == (self.users?.count ?? 0) - 1 {

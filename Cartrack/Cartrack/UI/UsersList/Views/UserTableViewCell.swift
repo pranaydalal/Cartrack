@@ -28,17 +28,20 @@ class UserTableViewCell: UITableViewCell {
             self.profilePictureImageView.layer.cornerRadius = self.profilePictureImageView.frame.height/2
         }
     }
+
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    var user: User? {
+        didSet {
+            self.userNameLabel.text = self.user?.name
+            self.emailLabel.text = self.user?.email
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
