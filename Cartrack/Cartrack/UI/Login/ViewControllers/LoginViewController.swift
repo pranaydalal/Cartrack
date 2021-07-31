@@ -8,7 +8,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    static let storyboardIdentifier = "LoginViewController"
+    
     @IBOutlet weak var loginButton: UIButton! {
         didSet {
             self.loginButton.layer.cornerRadius = 4

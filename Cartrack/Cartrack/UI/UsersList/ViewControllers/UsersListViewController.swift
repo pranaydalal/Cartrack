@@ -23,8 +23,13 @@ class UsersListViewController: UITableViewController {
 
     private func setupUI() {
         self.title = "Users"
-        
+        self.setupLogoutButton()
         self.setupTableView()
+    }
+    
+    private func setupLogoutButton() {
+        let logoutButton = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logout))
+        self.navigationItem.rightBarButtonItem = logoutButton
     }
     
     private func setupTableView() {
@@ -32,7 +37,7 @@ class UsersListViewController: UITableViewController {
         self.tableView.separatorStyle = .none
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         self.usersListViewModel.didShowError = { [weak self] error in
             guard let _self = self else { return }
             
@@ -70,6 +75,12 @@ class UsersListViewController: UITableViewController {
         let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func logout() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = mainStoryboard.instantiateViewController(identifier: LoginViewController.storyboardIdentifier)
+        UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = loginViewController
     }
 }
 
