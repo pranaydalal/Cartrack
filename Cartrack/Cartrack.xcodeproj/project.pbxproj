@@ -143,6 +143,51 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		7C3A593326B72B46002BF5F0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */,
+				7CB26C2626B4346800E303CF /* CountryPickerViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7C3A593426B72B6E002BF5F0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				7C203D1A26B58A890078CEAE /* UsersListViewModel.swift */,
+				7C3A591C26B68E93002BF5F0 /* UserDetailsViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		7C3A593526B72BD4002BF5F0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7CFDC59B26B132E00059989A /* NetworkSessionMock.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7C3A593626B72C48002BF5F0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7C3A592126B70037002BF5F0 /* LoginViewModelTests.swift */,
+				7C3A592626B71150002BF5F0 /* LoginViewModelFailTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7C3A593726B72C69002BF5F0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				7CD3674926B18743007DDCE6 /* UserTests.swift */,
+				7CFDC5A826B149D20059989A /* UsersListRequestTests.swift */,
+				7C3A592E26B72089002BF5F0 /* CountryPickerViewModelTests.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		7C97BB8326B31CDF002C9F49 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,10 +201,8 @@
 		7C97BB8526B31D72002C9F49 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */,
-				7CB26C2626B4346800E303CF /* CountryPickerViewModel.swift */,
-				7C203D1A26B58A890078CEAE /* UsersListViewModel.swift */,
-				7C3A591C26B68E93002BF5F0 /* UserDetailsViewModel.swift */,
+				7C3A593426B72B6E002BF5F0 /* User */,
+				7C3A593326B72B46002BF5F0 /* Login */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -248,13 +291,10 @@
 		7CF54DAA26B07134006DB339 /* CartrackTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C3A593726B72C69002BF5F0 /* User */,
+				7C3A593626B72C48002BF5F0 /* Login */,
+				7C3A593526B72BD4002BF5F0 /* Network */,
 				7CF54DAD26B07134006DB339 /* Info.plist */,
-				7CFDC59B26B132E00059989A /* NetworkSessionMock.swift */,
-				7CFDC5A826B149D20059989A /* UsersListRequestTests.swift */,
-				7CD3674926B18743007DDCE6 /* UserTests.swift */,
-				7C3A592126B70037002BF5F0 /* LoginViewModelTests.swift */,
-				7C3A592626B71150002BF5F0 /* LoginViewModelFailTests.swift */,
-				7C3A592E26B72089002BF5F0 /* CountryPickerViewModelTests.swift */,
 			);
 			path = CartrackTests;
 			sourceTree = "<group>";

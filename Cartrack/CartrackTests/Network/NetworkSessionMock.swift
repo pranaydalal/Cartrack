@@ -24,7 +24,6 @@ class NetworkSessionMock: NetworkSession {
     var url: URL?
     var response: ResponeType = .success(Data())
     
-    
     func call(_ request: URLRequestConvertible, then completionHandler: @escaping ((Result<Data, Error>) -> Void)) {
         
         do {
