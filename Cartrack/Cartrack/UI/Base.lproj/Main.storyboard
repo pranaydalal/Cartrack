@@ -27,7 +27,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="o8O-Fl-tb2">
-                                                        <rect key="frame" x="16" y="241.5" width="382" height="335"/>
+                                                        <rect key="frame" x="16" y="212.5" width="382" height="393"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VT0-XC-Vwj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="116"/>
@@ -66,7 +66,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psI-5I-vLp">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                         <connections>
                                                                             <action selector="passwordTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="vMA-dL-r2z"/>
                                                                         </connections>
@@ -90,8 +90,26 @@
                                                                     <constraint firstAttribute="bottom" secondItem="3io-cK-4XX" secondAttribute="bottom" id="f9t-wT-Z29"/>
                                                                 </constraints>
                                                             </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7t-2I-Uph">
+                                                                <rect key="frame" x="0.0" y="266" width="382" height="50"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* All the fileds are mandetory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-H1-a9g">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="fbY-H1-a9g" secondAttribute="trailing" id="L98-2O-iZf"/>
+                                                                    <constraint firstItem="fbY-H1-a9g" firstAttribute="leading" secondItem="W7t-2I-Uph" secondAttribute="leading" id="PE8-6b-spb"/>
+                                                                    <constraint firstItem="fbY-H1-a9g" firstAttribute="top" secondItem="W7t-2I-Uph" secondAttribute="top" id="cHI-i5-LaE"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="fbY-H1-a9g" secondAttribute="bottom" id="tNQ-Gg-1Kd"/>
+                                                                </constraints>
+                                                            </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ik5-r2-wIH">
-                                                                <rect key="frame" x="0.0" y="266" width="382" height="69"/>
+                                                                <rect key="frame" x="0.0" y="324" width="382" height="69"/>
                                                                 <subviews>
                                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbN-H3-tlp">
                                                                         <rect key="frame" x="0.0" y="16" width="382" height="53"/>
@@ -438,6 +456,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
