@@ -47,6 +47,7 @@ final class LoginViewModel {
     var country : String = "" {
         didSet {
             self.didUpdateCountry?(country)
+            self.updateLoginButtonEnableStatus()
         }
     }
     
@@ -55,7 +56,7 @@ final class LoginViewModel {
     }
     
     private func updateLoginButtonEnableStatus() {
-        self.loginButtonEnableStatus?(self.isUserNameValid && self.isPasswordValid)
+        self.loginButtonEnableStatus?(self.isUserNameValid && self.isPasswordValid && !self.country.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
     }
     
     func login() {
