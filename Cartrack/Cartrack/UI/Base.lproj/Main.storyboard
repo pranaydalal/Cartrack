@@ -335,7 +335,7 @@
                                                                             <constraint firstAttribute="width" secondItem="TDr-WB-PvR" secondAttribute="height" multiplier="1:1" id="Sg8-ES-MCz"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Romaguera-Crona" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC7-aW-xHw">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Romaguera-Crona" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC7-aW-xHw">
                                                                         <rect key="frame" x="54" y="0.0" width="328" height="30"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -411,6 +411,15 @@
                             <constraint firstItem="wJa-7H-8O1" firstAttribute="trailing" secondItem="f8J-Cz-Tgk" secondAttribute="trailing" id="tOF-l9-Q4L"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="v6j-sK-4rS" id="cpW-qh-smC"/>
+                        <outlet property="emailLabel" destination="C8w-Ra-6Jh" id="GK0-3f-1MG"/>
+                        <outlet property="mapView" destination="zix-mu-Riv" id="rHX-KK-eD3"/>
+                        <outlet property="organisationLabel" destination="WC7-aW-xHw" id="1pg-Xu-W3k"/>
+                        <outlet property="phoneNumberLabel" destination="PGh-kz-CDI" id="D3s-u8-03e"/>
+                        <outlet property="userNameLabel" destination="FHA-Ha-GoT" id="rFz-JY-afh"/>
+                        <outlet property="websiteLabel" destination="hQt-ge-vlH" id="kzj-ze-m4m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAw-rV-enK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

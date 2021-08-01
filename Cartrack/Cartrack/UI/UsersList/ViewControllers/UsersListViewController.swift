@@ -85,7 +85,9 @@ class UsersListViewController: UITableViewController {
     
     private func launchUserDetail(withUser user: User) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let userDetailsViewController = mainStoryboard.instantiateViewController(identifier: UserDetailsViewController.storyboardIdentifier)
+        guard let userDetailsViewController = mainStoryboard.instantiateViewController(identifier: UserDetailsViewController.storyboardIdentifier) as? UserDetailsViewController else { return }
+        
+        userDetailsViewController.user = user
         self.navigationController?.pushViewController(userDetailsViewController, animated: true)
     }
 }
