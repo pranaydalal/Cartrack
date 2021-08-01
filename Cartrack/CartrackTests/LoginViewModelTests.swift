@@ -73,4 +73,32 @@ class LoginViewModelTests: XCTestCase {
         self.viewModel.password = "abc@123"
         self.waitForExpectations(timeout: 10.0, handler: nil)
     }
+    
+    func testUsernameValidationStatusValid() {
+        let loginButtonExpectation = self.expectation(description: "update")
+        self.viewModel.country = "India"
+        self.viewModel.userName = "abc"
+        self.viewModel.password = "abc@123"
+        self.viewModel.userNameValidationStatus = { valid in
+            loginButtonExpectation.fulfill()
+            XCTAssertTrue(valid)
+        }
+        
+        self.viewModel.userName = "ABC123"
+        self.waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
+    func testPasswordValidationStatusValid() {
+        let loginButtonExpectation = self.expectation(description: "update")
+        self.viewModel.country = "India"
+        self.viewModel.userName = "ABC123"
+        self.viewModel.password = "abc"
+        self.viewModel.passwordValidationStatus = { valid in
+            loginButtonExpectation.fulfill()
+            XCTAssertTrue(valid)
+        }
+        
+        self.viewModel.password = "abc@123"
+        self.waitForExpectations(timeout: 10.0, handler: nil)
+    }
 }

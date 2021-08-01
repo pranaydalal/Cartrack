@@ -13,6 +13,7 @@
 		7C3A591D26B68E93002BF5F0 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A591C26B68E93002BF5F0 /* UserDetailsViewModel.swift */; };
 		7C3A592226B70037002BF5F0 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A592126B70037002BF5F0 /* LoginViewModelTests.swift */; };
 		7C3A592726B71150002BF5F0 /* LoginViewModelFailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A592626B71150002BF5F0 /* LoginViewModelFailTests.swift */; };
+		7C3A592F26B72089002BF5F0 /* CountryPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A592E26B72089002BF5F0 /* CountryPickerViewModelTests.swift */; };
 		7C97BB8726B31D91002C9F49 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */; };
 		7CB26C2226B4340100E303CF /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB26C2126B4340100E303CF /* CountryPickerViewController.swift */; };
 		7CB26C2726B4346800E303CF /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB26C2626B4346800E303CF /* CountryPickerViewModel.swift */; };
@@ -28,7 +29,6 @@
 		7CF54D9C26B07130006DB339 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF54D9A26B07130006DB339 /* Main.storyboard */; };
 		7CF54D9E26B07133006DB339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF54D9D26B07133006DB339 /* Assets.xcassets */; };
 		7CF54DA126B07133006DB339 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF54D9F26B07133006DB339 /* LaunchScreen.storyboard */; };
-		7CF54DAC26B07134006DB339 /* CartrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DAB26B07134006DB339 /* CartrackTests.swift */; };
 		7CF54DB726B07134006DB339 /* CartrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DB626B07134006DB339 /* CartrackUITests.swift */; };
 		7CF54DCC26B07238006DB339 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DC926B07238006DB339 /* NetworkErrors.swift */; };
 		7CF54DCD26B07238006DB339 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54DCA26B07238006DB339 /* NetworkSession.swift */; };
@@ -66,6 +66,7 @@
 		7C3A591C26B68E93002BF5F0 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		7C3A592126B70037002BF5F0 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		7C3A592626B71150002BF5F0 /* LoginViewModelFailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelFailTests.swift; sourceTree = "<group>"; };
+		7C3A592E26B72089002BF5F0 /* CountryPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModelTests.swift; sourceTree = "<group>"; };
 		7C97BB8626B31D91002C9F49 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7CB26C2126B4340100E303CF /* CountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
 		7CB26C2626B4346800E303CF /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		7CF54DA026B07133006DB339 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CF54DA226B07133006DB339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CF54DA726B07134006DB339 /* CartrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CF54DAB26B07134006DB339 /* CartrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartrackTests.swift; sourceTree = "<group>"; };
 		7CF54DAD26B07134006DB339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CF54DB226B07134006DB339 /* CartrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF54DB626B07134006DB339 /* CartrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartrackUITests.swift; sourceTree = "<group>"; };
@@ -248,13 +248,13 @@
 		7CF54DAA26B07134006DB339 /* CartrackTests */ = {
 			isa = PBXGroup;
 			children = (
-				7CF54DAB26B07134006DB339 /* CartrackTests.swift */,
 				7CF54DAD26B07134006DB339 /* Info.plist */,
 				7CFDC59B26B132E00059989A /* NetworkSessionMock.swift */,
 				7CFDC5A826B149D20059989A /* UsersListRequestTests.swift */,
 				7CD3674926B18743007DDCE6 /* UserTests.swift */,
 				7C3A592126B70037002BF5F0 /* LoginViewModelTests.swift */,
 				7C3A592626B71150002BF5F0 /* LoginViewModelFailTests.swift */,
+				7C3A592E26B72089002BF5F0 /* CountryPickerViewModelTests.swift */,
 			);
 			path = CartrackTests;
 			sourceTree = "<group>";
@@ -468,9 +468,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C3A592226B70037002BF5F0 /* LoginViewModelTests.swift in Sources */,
+				7C3A592F26B72089002BF5F0 /* CountryPickerViewModelTests.swift in Sources */,
 				7CD3674A26B18743007DDCE6 /* UserTests.swift in Sources */,
 				7CFDC5A926B149D20059989A /* UsersListRequestTests.swift in Sources */,
-				7CF54DAC26B07134006DB339 /* CartrackTests.swift in Sources */,
 				7C3A592726B71150002BF5F0 /* LoginViewModelFailTests.swift in Sources */,
 				7CFDC59C26B132E00059989A /* NetworkSessionMock.swift in Sources */,
 			);

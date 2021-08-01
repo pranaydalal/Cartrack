@@ -46,7 +46,6 @@ class LoginViewModelFailTests: XCTestCase {
         waitForExpectations(timeout: 10.0, handler: nil)
     }
 
-    
     func testLoginButtonDisabled() {
         let loginButtonExpectation = self.expectation(description: "update")
         self.viewModel.country = "India"
@@ -55,6 +54,34 @@ class LoginViewModelFailTests: XCTestCase {
             loginButtonExpectation.fulfill()
             XCTAssertFalse(isEnabled)
         }
+        self.viewModel.password = "abc"
+        self.waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
+    func testUsernameValidationStatusInvalid() {
+        let loginButtonExpectation = self.expectation(description: "update")
+        self.viewModel.country = "India"
+        self.viewModel.userName = "ABC123"
+        self.viewModel.password = "abc@123"
+        self.viewModel.userNameValidationStatus = { valid in
+            loginButtonExpectation.fulfill()
+            XCTAssertFalse(valid)
+        }
+        
+        self.viewModel.userName = "abc"
+        self.waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
+    func testPasswordValidationStatusInvalid() {
+        let loginButtonExpectation = self.expectation(description: "update")
+        self.viewModel.country = "India"
+        self.viewModel.userName = "ABC123"
+        self.viewModel.password = "abc@123"
+        self.viewModel.passwordValidationStatus = { valid in
+            loginButtonExpectation.fulfill()
+            XCTAssertFalse(valid)
+        }
+        
         self.viewModel.password = "abc"
         self.waitForExpectations(timeout: 10.0, handler: nil)
     }
