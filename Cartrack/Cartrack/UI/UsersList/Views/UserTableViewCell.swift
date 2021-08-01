@@ -12,7 +12,6 @@ class UserTableViewCell: UITableViewCell {
     
     @IBOutlet weak var wrapperView: UIView! {
         didSet {
-            self.wrapperView.backgroundColor = UIColor(red: 228.0 / 255.0, green: 228.0 / 255.0, blue: 228.0 / 255.0, alpha: 1.0)
             self.wrapperView.layer.cornerRadius = 5.0
             self.wrapperView.layer.borderColor = UIColor.lightGray.cgColor
             self.wrapperView.layer.borderWidth = 0.2
