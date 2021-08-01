@@ -66,7 +66,7 @@ class UsersListViewController: UITableViewController {
         self.usersListViewModel.didUserSelected = { [weak self] user in
             guard let _self = self else { return }
             
-            // Navigate to user details screens
+            _self.launchUserDetail(withUser: user)
         }
     }
     
@@ -81,6 +81,12 @@ class UsersListViewController: UITableViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = mainStoryboard.instantiateViewController(identifier: LoginViewController.storyboardIdentifier)
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = loginViewController
+    }
+    
+    private func launchUserDetail(withUser user: User) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let userDetailsViewController = mainStoryboard.instantiateViewController(identifier: UserDetailsViewController.storyboardIdentifier)
+        self.navigationController?.pushViewController(userDetailsViewController, animated: true)
     }
 }
 

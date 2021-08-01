@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CountryPickerViewModel {
+final class CountryPickerViewModel {
     
     var didUpdateCountry:((String)->())?
     var didDismiss:(()->())?
