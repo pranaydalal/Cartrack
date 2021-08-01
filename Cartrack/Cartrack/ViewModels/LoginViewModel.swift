@@ -19,25 +19,25 @@ final class LoginViewModel {
         return self.password.count > 3
     }
     
-    var didUpdateCountry:((String)->())?
-    var didLaunchCountryPicker:((String)->())?
+    var didUpdateCountry: ((String)->())?
+    var didLaunchCountryPicker: ((String)->())?
     
-    var didLoginSuccessful:(()->())?
-    var didLoginFailed:(()->())?
+    var didLoginSuccessful: (()->())?
+    var didLoginFailed: (()->())?
     
-    var userNameValidationStatus:((Bool)->())?
-    var passwordValidationStatus:((Bool)->())?
+    var userNameValidationStatus: ((Bool)->())?
+    var passwordValidationStatus: ((Bool)->())?
     
-    var loginButtonEnableStatus:((Bool)->())?
+    var loginButtonEnableStatus: ((Bool)->())?
     
-    var userName:String = "" {
+    var userName: String = "" {
         didSet {
             self.userNameValidationStatus?(self.userName.count > 3 || self.userName.count == 0)
             self.updateLoginButtonEnableStatus()
         }
     }
     
-    var password:String = "" {
+    var password: String = "" {
         didSet {
             self.passwordValidationStatus?(self.password.count > 3 || self.password.count == 0)
             self.updateLoginButtonEnableStatus()
