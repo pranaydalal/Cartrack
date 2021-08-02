@@ -8,6 +8,12 @@
 import Foundation
 
 extension String {
+    
+    /**
+     Check if regex mathes the string
+     
+     - parameter regexPattern: Regex to match
+     */
     func doesMatchRegex(_ regexPattern: String) -> Bool {
         guard let regex = try? NSRegularExpression(pattern: regexPattern, options: .caseInsensitive) else {
             return false
