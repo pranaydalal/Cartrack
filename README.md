@@ -8,6 +8,15 @@ As registration functionality is not in scope we have a hardcoded credentials fo
 Username: ABC123
 Password: abc@123
 
+With the given time constraints and the requirements in the task, there are some known issues/improvements that need to be addressed with some future scope in my wish. Please find them listed below:
+
+### Known Issues/Imporvements
+* Documentations need to be improved.
+* Keyboard hides the Login button on Login screens.
+* Currently the country has no use of it in the app even though the selection of country is mandatory and the authentication is done using User Name and Password as per requirement. So, according to my imagination, I would use the selected country to be displayed as the current country of the user on the Users Listing screen after login.
+* Asynchronous loader to be added while the user is authenticated.
+* Pagination is implemented in the User list screen with the loader on NavigationBar, but the user needs to see more eye-catching loader and bottom loader while loading more users after the user scrolls down.
+
 ### Future Improvement
 * Add Registration functionality
 * Enhance Network module
@@ -28,6 +37,7 @@ Clone from git
 ```
 git clone https://github.com/pranaydalal/Cartrack
 ```
+Checkout main branch
 
 ### Running
 
