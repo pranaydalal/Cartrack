@@ -8,13 +8,13 @@
 import Foundation
 
 struct UsersListRequest {
+    /// Base URL for webeservice to connect
     let url: URL
     
     /**
-     Initializes `UsersListRequest` with URL
+     Initializes with URL
      
-     - parameters:
-        - url: Base URL for users  list
+     - parameter url: Base URL for users  list
      */
     init(url: URL) {
         self.url = url
