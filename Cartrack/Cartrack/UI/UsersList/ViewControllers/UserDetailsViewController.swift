@@ -9,15 +9,26 @@ import UIKit
 import MapKit
 
 class UserDetailsViewController: UIViewController {
+    
+    // MARK: - Constants
+    
+    /// Storyboard Identifier to load ViewController
     static let storyboardIdentifier = "UserDetailsViewController"
+    
+    // MARK: - Private properties
     
     private var userDetailsViewModel: UserDetailsViewModel!
     
+    // MARK: - Public properties
+    
+    /// To display the details of the user
     var user : User! {
         didSet {
             self.userDetailsViewModel = UserDetailsViewModel(user: self.user)
         }
     }
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -32,11 +43,15 @@ class UserDetailsViewController: UIViewController {
         }
     }
     
+    // MARK: - UIViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupUI()
     }
+    
+    // MARK: - Public properties
     
     private func setupUI() {
         self.title = "User details"

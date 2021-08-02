@@ -9,8 +9,12 @@ import UIKit
 
 class UsersListViewController: UITableViewController {
     
+    // MARK: - Private properties
+    
     private let usersListViewModel = UsersListViewModel(with: UsersListWebService(baseURL: NetworkConstant.baseURL))
     private var users: [User]?
+    
+    // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,8 @@ class UsersListViewController: UITableViewController {
         self.usersListViewModel.fetchUsers()
     }
 
+    // MARK: - Private methods
+    
     private func setupUI() {
         self.title = "Users"
         self.setupLogoutButton()
