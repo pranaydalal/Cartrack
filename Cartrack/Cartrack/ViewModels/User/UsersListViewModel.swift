@@ -41,7 +41,7 @@ final class UsersListViewModel {
     }
     
     func userSelected(at index: Int) {
-        guard let user = self.data?[index] else { return }
+        guard self.data?.indices.contains(index) ?? false ,let user = self.data?[index] else { return }
         self.didUserSelected?(user)
     }
     
@@ -58,10 +58,7 @@ final class UsersListViewModel {
                 _self.didEndLoading?()
                 switch response {
                 case let .success(users):
-                    guard users.count != 0 else {
-                        _self.isNextPageAvailable = false
-                        return
-                    }
+                    if users.count == 0 { _self.isNextPageAvailable = false }
                     
                     if let users = _self.data {
                         _self.data?.append(contentsOf: users)

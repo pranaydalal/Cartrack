@@ -8,7 +8,7 @@
 import XCTest
 @testable import Cartrack
 
-class MockUserDatabaseHandler: UserAccountService {
+struct MockUserDatabaseHandler: UserAccountService {
     func authenticateUser(withUserName username: String, andPassword password: String) -> Bool {
         return true
     }
