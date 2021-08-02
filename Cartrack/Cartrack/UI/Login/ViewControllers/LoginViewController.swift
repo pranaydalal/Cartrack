@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         label.textColor = UIColor.red
         label.numberOfLines = 0
         label.font = label.font.withSize(10)
-        label.text = "Password must have at least 7 characters with at least one Uppercase, one Lowercase and one Symbol"
+        label.text = "Password must have at least 7 characters with at least one Alphabet, one Number and one Symbol"
         return label
     }()
     
