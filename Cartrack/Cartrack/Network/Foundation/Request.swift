@@ -8,6 +8,7 @@
 import Foundation
 
 protocol URLRequestConvertible {
+    /// To get URL request
     func expressAsURLRequest() throws -> URLRequest
 }
 
@@ -40,6 +41,14 @@ extension ParameteredRequest {
 
 protocol DataRequest: Request {
     associatedtype Response: Decodable
+    
+    /**
+     To connect server with NetworkSession
+     
+     - parameters:
+        - network: Session to connect server
+        - completion: Callback to be invoked at the end of call
+     */
     func execute(onNetwork network: NetworkSession, then completion: @escaping ((Result<Response, Error>) -> Void))
     
 }

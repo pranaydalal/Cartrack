@@ -8,6 +8,13 @@
 import Foundation
 
 protocol NetworkSession {
+    /**
+     To connect with the webserver with the request
+     
+     - parameters:
+        - request: Request to be used to connect server
+        - completionHandler: Callback to be invoked at the end of call
+     */
     func call(_ request: URLRequestConvertible, then completionHandler: @escaping ((Result<Data, Error>) -> Void))
 }
 
