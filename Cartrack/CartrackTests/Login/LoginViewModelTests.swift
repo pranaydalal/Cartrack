@@ -8,7 +8,7 @@
 import XCTest
 @testable import Cartrack
 
-struct MockUserDatabaseHandler: UserAccountService {
+struct UserDatabaseHandlerMock: UserAccountService {
     func authenticateUser(withUserName username: String, andPassword password: String) -> Bool {
         return true
     }
@@ -21,10 +21,10 @@ struct MockUserDatabaseHandler: UserAccountService {
 class LoginViewModelTests: XCTestCase {
     
     var viewModel : LoginViewModel!
-    var mockService : MockUserDatabaseHandler!
+    var mockService : UserDatabaseHandlerMock!
     
     override func setUpWithError() throws {
-        self.mockService = MockUserDatabaseHandler()
+        self.mockService = UserDatabaseHandlerMock()
         self.viewModel = LoginViewModel(with: mockService)
     }
 
