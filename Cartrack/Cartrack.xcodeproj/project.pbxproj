@@ -24,6 +24,7 @@
 		7CD3674A26B18743007DDCE6 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3674926B18743007DDCE6 /* UserTests.swift */; };
 		7CD3675426B27E11007DDCE6 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3675326B27E11007DDCE6 /* DatabaseHandler.swift */; };
 		7CD3675D26B2B266007DDCE6 /* CarTrackDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7CD3675C26B2B266007DDCE6 /* CarTrackDB.sqlite */; };
+		7CE204D826B7D14000667EB9 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE204D726B7D14000667EB9 /* String+Regex.swift */; };
 		7CF30E5E26B7B1D70023A173 /* UserDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF30E5D26B7B1D70023A173 /* UserDetailsViewModelTests.swift */; };
 		7CF30E6326B7B3520023A173 /* Stubbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF30E6226B7B3510023A173 /* Stubbed.swift */; };
 		7CF54D9526B07130006DB339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54D9426B07130006DB339 /* AppDelegate.swift */; };
@@ -80,6 +81,7 @@
 		7CD3674926B18743007DDCE6 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		7CD3675326B27E11007DDCE6 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		7CD3675C26B2B266007DDCE6 /* CarTrackDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarTrackDB.sqlite; sourceTree = "<group>"; };
+		7CE204D726B7D14000667EB9 /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
 		7CF30E5D26B7B1D70023A173 /* UserDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		7CF30E6226B7B3510023A173 /* Stubbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubbed.swift; sourceTree = "<group>"; };
 		7CF54D9126B07130006DB339 /* Cartrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +261,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		7CE204D626B7D11E00667EB9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7CE204D726B7D14000667EB9 /* String+Regex.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7CF54D8826B07130006DB339 = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +292,7 @@
 		7CF54D9326B07130006DB339 /* Cartrack */ = {
 			isa = PBXGroup;
 			children = (
+				7CE204D626B7D11E00667EB9 /* Utilities */,
 				7C97BB8526B31D72002C9F49 /* ViewModels */,
 				7C97BB8326B31CDF002C9F49 /* UI */,
 				7CD3674E26B27334007DDCE6 /* Database */,
@@ -490,6 +501,7 @@
 			files = (
 				7CF54DDE26B12573006DB339 /* UsersListRequest.swift in Sources */,
 				7CF54DD326B075FF006DB339 /* RequestBuilder.swift in Sources */,
+				7CE204D826B7D14000667EB9 /* String+Regex.swift in Sources */,
 				7CF54D9926B07130006DB339 /* LoginViewController.swift in Sources */,
 				7CD3675426B27E11007DDCE6 /* DatabaseHandler.swift in Sources */,
 				7CF54DCE26B07238006DB339 /* Request.swift in Sources */,
