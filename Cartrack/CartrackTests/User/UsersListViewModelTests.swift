@@ -172,7 +172,10 @@ class UsersListViewModelTests: XCTestCase {
             endLoadingExpectation.fulfill()
             viewModel.userSelected(at: 0)
         }
-
+        
+        viewModel.didReloadUsersListData = { users in
+            XCTFail()
+        }
         viewModel.fetchUsers()
         self.waitForExpectations(timeout: 10.0, handler: nil)
     }
