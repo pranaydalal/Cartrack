@@ -51,7 +51,7 @@ class UserDetailsViewController: UIViewController {
         self.setupUI()
     }
     
-    // MARK: - Public properties
+    // MARK: - Private methods
     
     private func setupUI() {
         self.title = "User details"
