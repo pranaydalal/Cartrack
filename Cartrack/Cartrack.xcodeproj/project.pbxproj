@@ -252,13 +252,16 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		7CD3675B26B2B194007DDCE6 /* Assets */ = {
+		7CD3675B26B2B194007DDCE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7CF54D9426B07130006DB339 /* AppDelegate.swift */,
+				7CF54D9626B07130006DB339 /* SceneDelegate.swift */,
+				7CF54D9F26B07133006DB339 /* LaunchScreen.storyboard */,
 				7CD3675C26B2B266007DDCE6 /* CarTrackDB.sqlite */,
 				7CF54D9D26B07133006DB339 /* Assets.xcassets */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7CE204D626B7D11E00667EB9 /* Utilities */ = {
@@ -292,16 +295,13 @@
 		7CF54D9326B07130006DB339 /* Cartrack */ = {
 			isa = PBXGroup;
 			children = (
-				7CE204D626B7D11E00667EB9 /* Utilities */,
-				7C97BB8526B31D72002C9F49 /* ViewModels */,
 				7C97BB8326B31CDF002C9F49 /* UI */,
+				7C97BB8526B31D72002C9F49 /* ViewModels */,
+				7CE204D626B7D11E00667EB9 /* Utilities */,
 				7CD3674E26B27334007DDCE6 /* Database */,
+				7CF54DC726B07238006DB339 /* Networking */,
 				7CF54DE226B12605006DB339 /* Models */,
-				7CF54DC726B07238006DB339 /* Network */,
-				7CD3675B26B2B194007DDCE6 /* Assets */,
-				7CF54D9426B07130006DB339 /* AppDelegate.swift */,
-				7CF54D9626B07130006DB339 /* SceneDelegate.swift */,
-				7CF54D9F26B07133006DB339 /* LaunchScreen.storyboard */,
+				7CD3675B26B2B194007DDCE6 /* Resources */,
 				7CF54DA226B07133006DB339 /* Info.plist */,
 			);
 			path = Cartrack;
@@ -328,13 +328,13 @@
 			path = CartrackUITests;
 			sourceTree = "<group>";
 		};
-		7CF54DC726B07238006DB339 /* Network */ = {
+		7CF54DC726B07238006DB339 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				7CF54DDC26B12514006DB339 /* WebService */,
 				7CF54DC826B07238006DB339 /* Foundation */,
 			);
-			path = Network;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		7CF54DC826B07238006DB339 /* Foundation */ = {
@@ -634,13 +634,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -689,12 +690,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -706,13 +708,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cartrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pranay.Cartrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -724,13 +727,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cartrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pranay.Cartrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
