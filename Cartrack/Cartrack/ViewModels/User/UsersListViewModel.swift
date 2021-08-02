@@ -9,7 +9,7 @@ import Foundation
 
 final class UsersListViewModel {
     
-    // MARK: Callbacks or observers
+    // MARK: - Callbacks or observers
     
     /// Callback for showing loader
     var didstartLoading: (() -> Void)?
@@ -26,7 +26,7 @@ final class UsersListViewModel {
     /// Callback returning users as datasource
     var didReloadUsersListData: (([User]?) -> Void)?
     
-    //MARK: Private properties
+    //MARK: - Private properties
     
     private let webservice: WebService?
     
@@ -37,7 +37,7 @@ final class UsersListViewModel {
     private var isDataLoadingInprogress = false
     private var isNextPageAvailable = true
     
-    // MARK: Initializers
+    // MARK: - Initializers
     
     /**
      To initialize with webservice
@@ -48,7 +48,7 @@ final class UsersListViewModel {
         self.webservice = webservice
     }
     
-    // MARK: Public methods
+    // MARK: - Public methods
     
     /**
      Select the user at index

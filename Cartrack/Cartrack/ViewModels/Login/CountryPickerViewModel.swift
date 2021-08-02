@@ -9,18 +9,18 @@ import Foundation
 
 final class CountryPickerViewModel {
     
-    // MARK: Callbacks or observers
+    // MARK: - Callbacks or observers
     
     var didUpdateCountry:((String)->())?
     var didDismiss:(()->())?
     
-    //MARK: Private properties
+    //MARK: - Private properties
     
     private var countrySelection : [String] {
         return Locale.isoRegionCodes.compactMap { Locale.current.localizedString(forRegionCode: $0) }
     }
     
-    // MARK: Public properties
+    // MARK: - Public properties
     
     /// Holds the current selected country
     var country : String = "" {
@@ -29,7 +29,7 @@ final class CountryPickerViewModel {
         }
     }
     
-    //MARK: Public methods
+    //MARK: - Public methods
     
     /// To get the Index of current selected country
     func selectedRow() -> Int? {

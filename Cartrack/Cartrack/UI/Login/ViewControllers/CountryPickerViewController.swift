@@ -8,16 +8,23 @@
 import UIKit
 
 protocol CountryPickerViewControllerDelegate {
+    /**
+     To notify the newly selcected country
+     
+     - parameters:
+        - countryPickerView: Instance of PickerView of which this notification is
+        - country: The newly selected country
+     */
     func countryPickerView(_ countryPickerView: CountryPickerViewController, didSelectCountry country: String)
 }
 
 class CountryPickerViewController : UIViewController {
 
-    var countryPickerViewModel = CountryPickerViewModel()
+    // MARK: - Private properties
     
-    var delegate: CountryPickerViewControllerDelegate?
+    private var countryPickerViewModel = CountryPickerViewModel()
     
-    lazy var countryPickerView : UIPickerView = {
+    private lazy var countryPickerView : UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -26,6 +33,12 @@ class CountryPickerViewController : UIViewController {
         return pickerView
     }()
     
+    // MARK: - Public properties
+    
+    var delegate: CountryPickerViewControllerDelegate?
+    
+    // MARK: - UIViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +46,8 @@ class CountryPickerViewController : UIViewController {
         self.initialize()
         self.bindViewModel()
     }
+    
+    // MARK: - Private methods
     
     private func setupUI() {
         self.view.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
@@ -61,10 +76,17 @@ class CountryPickerViewController : UIViewController {
         }
     }
     
+    // MARK: - Public methods
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.countryPickerViewModel.dismiss()
     }
     
+    /**
+     To set the country as selected
+     
+     - parameters country: Used to check the string in list and set if available
+     */
     func selectCountryIfAvailable(country: String) {
         self.countryPickerViewModel.country = country
         
@@ -73,6 +95,8 @@ class CountryPickerViewController : UIViewController {
         }
     }
 }
+
+// MARK: - Picker view delegate
 
 extension CountryPickerViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     

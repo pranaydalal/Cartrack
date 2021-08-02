@@ -10,11 +10,11 @@ import CoreLocation
 
 final class UserDetailsViewModel {
     
-    // MARK: Private properties
+    // MARK: - Private properties
     
     private let user : User
     
-    // MARK: Public properties
+    // MARK: - Public properties
     
     /// Address by concatinating address components with ',\n'
     var address : String {

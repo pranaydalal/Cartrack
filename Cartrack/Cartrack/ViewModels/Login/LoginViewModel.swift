@@ -9,7 +9,7 @@ import Foundation
 
 final class LoginViewModel {
     
-    // MARK: Callbacks or observers
+    // MARK: - Callbacks or observers
     
     var didUpdateCountry: ((String)->())?
     var didLaunchCountryPicker: ((String)->())?
@@ -22,7 +22,7 @@ final class LoginViewModel {
     
     var loginButtonEnableStatus: ((Bool)->())?
     
-    // MARK: Private properties
+    // MARK: - Private properties
     
     private let accountService : UserAccountService
     
@@ -34,7 +34,7 @@ final class LoginViewModel {
         return self.password.doesMatchRegex("^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$")
     }
     
-    // MARK: Public properties
+    // MARK: - Public properties
     
     /// User name to be used to login
     var userName: String = "" {
@@ -60,7 +60,7 @@ final class LoginViewModel {
         }
     }
     
-    // MARK: Initializers
+    // MARK: - Initializers
     
     /**
      To initialize with data service
@@ -71,13 +71,13 @@ final class LoginViewModel {
         self.accountService = accountService
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
     
     private func updateLoginButtonEnableStatus() {
         self.loginButtonEnableStatus?(self.isUserNameValid && self.isPasswordValid && !self.country.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
     }
     
-    // MARK: Public methods
+    // MARK: - Public methods
     
     /// To check is user credentials are authentic
     func login() {

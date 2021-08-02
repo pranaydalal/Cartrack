@@ -9,12 +9,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    // MARK: Constants
+    // MARK: - Constants
     
     /// Storyboard Identifier to load ViewController
     static let storyboardIdentifier = "LoginViewController"
     
-    // MARK:IBOutlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var loginButton: UIButton! {
         didSet {
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // MARK: Private properties
+    // MARK: - Private properties
     
     private var userNameErrorLabel: UILabel = {
         let label = UILabel()
@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
     
     private let loginViewModel = LoginViewModel(with: UserDatabaseHandler.shared())
     
-    // MARK: UIViewController Lifecycle
+    // MARK: - UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
         self.bindViewModel()
     }
     
-    // MARK: IBActions methods
+    // MARK: - IBActions methods
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         self.loginViewModel.login()
@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
         self.loginViewModel.password = self.passwordTextField.text ?? ""
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
     
     private func bindViewModel() {
         self.loginViewModel.didLoginFailed = { [weak self] in
@@ -167,7 +167,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-// MARK: - Text Field delegate
+// MARK: - Text field delegate
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
