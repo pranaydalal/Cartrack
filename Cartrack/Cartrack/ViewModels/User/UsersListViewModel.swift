@@ -27,6 +27,7 @@ final class UsersListViewModel {
     var didReloadUsersListData: (([User]?) -> Void)?
     
     //MARK: Private properties
+    
     private let webservice: WebService?
     
     private var data: [User]?
@@ -36,15 +37,30 @@ final class UsersListViewModel {
     private var isDataLoadingInprogress = false
     private var isNextPageAvailable = true
     
+    //MARK: Initializers
+    
+    /**
+     To initialize with webservice
+     
+     - parameter webservice: Webservice to fetch user list
+     */
     required init(with webservice: WebService) {
         self.webservice = webservice
     }
     
+    //MARK: Public methods
+    
+    /**
+     Select the user at index
+     
+     - parameter index: Index at which user is to be selected
+     */
     func userSelected(at index: Int) {
         guard self.data?.indices.contains(index) ?? false ,let user = self.data?[index] else { return }
         self.didUserSelected?(user)
     }
     
+    /// Should be used to fetch the users
     func fetchUsers() {
         
         guard !self.isDataLoadingInprogress, self.isNextPageAvailable else { return }
