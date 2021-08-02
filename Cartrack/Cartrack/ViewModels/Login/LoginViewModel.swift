@@ -9,15 +9,7 @@ import Foundation
 
 final class LoginViewModel {
     
-    private let accountService : UserAccountService
-    
-    private var isUserNameValid: Bool {
-        return self.userName.doesMatchRegex("^[0-9a-zA-Z]{5,}$")
-    }
-    
-    private var isPasswordValid: Bool {
-        return self.password.doesMatchRegex("^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$")
-    }
+    // MARK: Callbacks or observers
     
     var didUpdateCountry: ((String)->())?
     var didLaunchCountryPicker: ((String)->())?
@@ -30,6 +22,21 @@ final class LoginViewModel {
     
     var loginButtonEnableStatus: ((Bool)->())?
     
+    //MARK: Private properties
+    
+    private let accountService : UserAccountService
+    
+    private var isUserNameValid: Bool {
+        return self.userName.doesMatchRegex("^[0-9a-zA-Z]{5,}$")
+    }
+    
+    private var isPasswordValid: Bool {
+        return self.password.doesMatchRegex("^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$")
+    }
+    
+    //MARK: Public properties
+    
+    /// User name to be used to login
     var userName: String = "" {
         didSet {
             self.userNameValidationStatus?(self.isUserNameValid || self.userName.count == 0)
@@ -37,6 +44,7 @@ final class LoginViewModel {
         }
     }
     
+    /// Password to be used to login
     var password: String = "" {
         didSet {
             self.passwordValidationStatus?(self.isPasswordValid || self.password.count == 0)
@@ -44,6 +52,7 @@ final class LoginViewModel {
         }
     }
     
+    /// Country to be used to login
     var country : String = "" {
         didSet {
             self.didUpdateCountry?(country)
@@ -51,14 +60,26 @@ final class LoginViewModel {
         }
     }
     
+    //MARK: Initializers
+    
+    /**
+     To initialize with data service
+     
+     - parameter accountService: Data service to be used for authentication operations
+     */
     required init(with accountService: UserAccountService) {
         self.accountService = accountService
     }
+    
+    //MARK: Private methods
     
     private func updateLoginButtonEnableStatus() {
         self.loginButtonEnableStatus?(self.isUserNameValid && self.isPasswordValid && !self.country.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
     }
     
+    //MARK: Public methods
+    
+    /// To check is user credentials are authentic
     func login() {
         if self.accountService.authenticateUser(withUserName: self.userName, andPassword: self.password) {
             self.didLoginSuccessful?()
@@ -67,6 +88,7 @@ final class LoginViewModel {
         }
     }
     
+    /// To launch country selection view
     func selectCountry() {
         self.didLaunchCountryPicker?(country)
     }
