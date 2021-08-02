@@ -12,11 +12,11 @@ final class LoginViewModel {
     private let accountService : UserAccountService
     
     private var isUserNameValid: Bool {
-        return self.userName.count > 3
+        return self.userName.doesMatchRegex("^[0-9a-zA-Z]{5,}$")
     }
     
     private var isPasswordValid: Bool {
-        return self.password.count > 3
+        return self.password.doesMatchRegex("^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$")
     }
     
     var didUpdateCountry: ((String)->())?
@@ -32,14 +32,14 @@ final class LoginViewModel {
     
     var userName: String = "" {
         didSet {
-            self.userNameValidationStatus?(self.userName.count > 3 || self.userName.count == 0)
+            self.userNameValidationStatus?(self.isUserNameValid || self.userName.count == 0)
             self.updateLoginButtonEnableStatus()
         }
     }
     
     var password: String = "" {
         didSet {
-            self.passwordValidationStatus?(self.password.count > 3 || self.password.count == 0)
+            self.passwordValidationStatus?(self.isPasswordValid || self.password.count == 0)
             self.updateLoginButtonEnableStatus()
         }
     }
