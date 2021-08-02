@@ -21,7 +21,6 @@ extension URLSession: NetworkSession {
         
         do {
             let urlRequest = try request.expressAsURLRequest()
-            debugPrint(urlRequest.url!)
             let completion: DataTaskCompletionCallback = { data, response, error in
                 
                 if let requestError = error {

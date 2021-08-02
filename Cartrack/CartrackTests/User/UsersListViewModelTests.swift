@@ -15,7 +15,6 @@ class UsersListWebServiceMock: WebService {
     required init(baseURL: URL, networkSession: NetworkSession) { }
     
     func fetchUsersList(_ completion: @escaping ((Result<[User], Error>) -> Void)) {
-        print(self.response)
         guard let extractedExpr = try? JSONDecoder().decode([User].self, from: Data(self.response.utf8)) else {
             completion(.failure(NetworkErrors.ParsingError.unableToParse))
             return

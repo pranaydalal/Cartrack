@@ -8,7 +8,13 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    // MARK: Constants
+    
+    /// Storyboard Identifier to load ViewController
     static let storyboardIdentifier = "LoginViewController"
+    
+    // MARK:IBOutlets
     
     @IBOutlet weak var loginButton: UIButton! {
         didSet {
@@ -24,6 +30,21 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var passwordStackView: UIStackView!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            self.passwordTextField.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var countryTextField: UITextField! {
+        didSet {
+            self.countryTextField.delegate = self
+        }
+    }
+    
+    // MARK: Private properties
+    
     private var userNameErrorLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.red
@@ -33,12 +54,6 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    @IBOutlet weak var passwordStackView: UIStackView!
-    @IBOutlet weak var passwordTextField: UITextField! {
-        didSet {
-            self.passwordTextField.delegate = self
-        }
-    }
     private var passwordErrorLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.red
@@ -48,20 +63,32 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    @IBOutlet weak var countryTextField: UITextField! {
-        didSet {
-            self.countryTextField.delegate = self
-        }
-    }
-    
     private let loginViewModel = LoginViewModel(with: UserDatabaseHandler.shared())
+    
+    // MARK: UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.bindViewModel()
     }
-
+    
+    // MARK: IBActions methods
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        self.loginViewModel.login()
+    }
+    
+    @IBAction func userNameTextFieldChanged(_ sender: Any) {
+        self.loginViewModel.userName = self.userNameTextField.text ?? ""
+    }
+    
+    @IBAction func passwordTextFieldChanged(_ sender: Any) {
+        self.loginViewModel.password = self.passwordTextField.text ?? ""
+    }
+    
+    // MARK: Private methods
+    
     private func bindViewModel() {
         self.loginViewModel.didLoginFailed = { [weak self] in
             guard let _self = self else { return }
@@ -138,19 +165,9 @@ class LoginViewController: UIViewController {
         
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = navigationController
     }
-    
-    @IBAction func loginButtonPressed(_ sender: Any) {
-        self.loginViewModel.login()
-    }
-    
-    @IBAction func userNameTextFieldChanged(_ sender: Any) {
-        self.loginViewModel.userName = self.userNameTextField.text ?? ""
-    }
-    
-    @IBAction func passwordTextFieldChanged(_ sender: Any) {
-        self.loginViewModel.password = self.passwordTextField.text ?? ""
-    }
 }
+
+// MARK: - Text Field delegate
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -166,6 +183,8 @@ extension LoginViewController: UITextFieldDelegate {
         return false
     }
 }
+
+// MARK: - Country picker delegate
 
 extension LoginViewController: CountryPickerViewControllerDelegate {
     func countryPickerView(_ countryPickerView: CountryPickerViewController, didSelectCountry country: String) {

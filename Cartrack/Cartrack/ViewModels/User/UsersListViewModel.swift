@@ -37,7 +37,7 @@ final class UsersListViewModel {
     private var isDataLoadingInprogress = false
     private var isNextPageAvailable = true
     
-    //MARK: Initializers
+    // MARK: Initializers
     
     /**
      To initialize with webservice
@@ -48,7 +48,7 @@ final class UsersListViewModel {
         self.webservice = webservice
     }
     
-    //MARK: Public methods
+    // MARK: Public methods
     
     /**
      Select the user at index

@@ -54,8 +54,7 @@ class UserDatabaseHandler: UserAccountService {
                 return true
             }
         }
-        let error = String(cString: sqlite3_errmsg(opaquePointer)!)
-        NSLog("Failed to fetch user", error)
+        
         sqlite3_finalize(opaqueQuery)
         return false
     }
@@ -70,12 +69,8 @@ class UserDatabaseHandler: UserAccountService {
             if sqlite3_step(opaqueQuery) == SQLITE_DONE {
                 return true
             }
-            let error = String(cString: sqlite3_errmsg(opaquePointer)!)
-            NSLog("Failed to query table::", error)
         }
 
-        let error = String(cString: sqlite3_errmsg(opaquePointer)!)
-        NSLog("Failed to insert into table::", error)
         sqlite3_finalize(opaqueQuery)
         return false
     }
@@ -90,14 +85,9 @@ class UserDatabaseHandler: UserAccountService {
             do {
                 if let localUrl = Bundle.main.url(forResource: selfType.databaseName, withExtension: selfType.databaseExtension) {
                     try filemanager.copyItem(atPath: (localUrl.path), toPath: databaseFileURL.path)
-                    NSLog("Database copied to device::")
                 }
-                NSLog("Failed to copy database to device ::")
-            } catch {
-                NSLog("Failed to copy database to device ::")
-            }
+            } catch { }
         }
-        NSLog("Database alreayd exists on device")
     }
 
     /// Establish connection to CarTrack database
@@ -106,11 +96,7 @@ class UserDatabaseHandler: UserAccountService {
         let databaseFileURL = URL(fileURLWithPath: self.documentUrl).appendingPathComponent("\(selfType.databaseName).\(selfType.databaseExtension)")
         var database: OpaquePointer?
         
-        if sqlite3_open(databaseFileURL.path, &database) == SQLITE_OK {
-            NSLog("Successfully connected to CarTrackDB", databaseFileURL.path)
-            return database
-        }
-        NSLog("Unable to connect to CarTrackDB")
+        if sqlite3_open(databaseFileURL.path, &database) == SQLITE_OK { return database }
         return nil
     }
 }

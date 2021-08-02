@@ -20,7 +20,7 @@ final class CountryPickerViewModel {
         return Locale.isoRegionCodes.compactMap { Locale.current.localizedString(forRegionCode: $0) }
     }
     
-    //MARK: Public properties
+    // MARK: Public properties
     
     /// Holds the current selected country
     var country : String = "" {
