@@ -26,12 +26,20 @@ class UserDatabaseHandler: UserAccountService {
     private var opaquePointer: OpaquePointer!
     private let documentUrl = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     
-    init() {
+    private static let sharedHandler: UserDatabaseHandler = {
+        return UserDatabaseHandler()
+    } ()
+    
+    private init() {
         self.prepareDatafile()
         opaquePointer = self.establishConnectionToDatabase()
         
         // hardcoding user credentials as registration screen is in future scope
         self.registerUser(withUserName: "ABC123", andPassword: "abc@123", andCountry: "Portugal")
+    }
+    
+    class func shared() -> UserDatabaseHandler {
+        return sharedHandler
     }
 
     /// Authenticate user

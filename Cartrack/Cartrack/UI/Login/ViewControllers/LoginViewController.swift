@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private let loginViewModel = LoginViewModel(with: UserDatabaseHandler())
+    private let loginViewModel = LoginViewModel(with: UserDatabaseHandler.shared())
     
     override func viewDidLoad() {
         super.viewDidLoad()
