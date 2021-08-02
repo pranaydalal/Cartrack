@@ -85,7 +85,7 @@ class CountryPickerViewController : UIViewController {
     /**
      To set the country as selected
      
-     - parameters country: Used to check the string in list and set if available
+     - parameter country: Used to check the string in list and set if available
      */
     func selectCountryIfAvailable(country: String) {
         self.countryPickerViewModel.country = country
