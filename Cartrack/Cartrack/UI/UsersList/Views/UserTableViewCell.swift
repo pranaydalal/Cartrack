@@ -8,7 +8,13 @@
 import UIKit
 
 class UserTableViewCell: UITableViewCell {
+    
+    // MARK: - Constants
+    
+    /// Reusable Identifier to load the Cell from nib
     static let reusableIdentifier = "UserTableViewCell"
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var wrapperView: UIView! {
         didSet {
@@ -31,16 +37,13 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    // MARK: - Public properties
+    
+    /// To display user details
     var user: User? {
         didSet {
             self.userNameLabel.text = self.user?.name
             self.emailLabel.text = self.user?.email
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
     }
 }
