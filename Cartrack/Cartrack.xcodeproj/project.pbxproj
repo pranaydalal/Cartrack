@@ -24,6 +24,7 @@
 		7CD3674A26B18743007DDCE6 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3674926B18743007DDCE6 /* UserTests.swift */; };
 		7CD3675426B27E11007DDCE6 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3675326B27E11007DDCE6 /* DatabaseHandler.swift */; };
 		7CD3675D26B2B266007DDCE6 /* CarTrackDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7CD3675C26B2B266007DDCE6 /* CarTrackDB.sqlite */; };
+		7CF30E5E26B7B1D70023A173 /* UserDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF30E5D26B7B1D70023A173 /* UserDetailsViewModelTests.swift */; };
 		7CF30E6326B7B3520023A173 /* Stubbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF30E6226B7B3510023A173 /* Stubbed.swift */; };
 		7CF54D9526B07130006DB339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54D9426B07130006DB339 /* AppDelegate.swift */; };
 		7CF54D9726B07130006DB339 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF54D9626B07130006DB339 /* SceneDelegate.swift */; };
@@ -79,6 +80,7 @@
 		7CD3674926B18743007DDCE6 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		7CD3675326B27E11007DDCE6 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		7CD3675C26B2B266007DDCE6 /* CarTrackDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CarTrackDB.sqlite; sourceTree = "<group>"; };
+		7CF30E5D26B7B1D70023A173 /* UserDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		7CF30E6226B7B3510023A173 /* Stubbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubbed.swift; sourceTree = "<group>"; };
 		7CF54D9126B07130006DB339 /* Cartrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF54D9426B07130006DB339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				7CFDC5A826B149D20059989A /* UsersListRequestTests.swift */,
 				7C3A592E26B72089002BF5F0 /* CountryPickerViewModelTests.swift */,
 				7C3A593826B72DC5002BF5F0 /* UsersListViewModelTests.swift */,
+				7CF30E5D26B7B1D70023A173 /* UserDetailsViewModelTests.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				7CD3674A26B18743007DDCE6 /* UserTests.swift in Sources */,
 				7CFDC5A926B149D20059989A /* UsersListRequestTests.swift in Sources */,
 				7C3A592726B71150002BF5F0 /* LoginViewModelFailTests.swift in Sources */,
+				7CF30E5E26B7B1D70023A173 /* UserDetailsViewModelTests.swift in Sources */,
 				7CFDC59C26B132E00059989A /* NetworkSessionMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
