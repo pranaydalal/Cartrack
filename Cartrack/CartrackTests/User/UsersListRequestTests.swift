@@ -11,45 +11,6 @@ import XCTest
 
 class UsersListRequestTests: XCTestCase {
     
-    static let successStubbedData = Data("""
-                [
-                    {
-                        \"id\": 1,
-                        \"name\": \"Leanne Graham\",
-                        \"username\": \"Bret\",
-                        \"email\": \"Sincere@april.biz\",
-                        \"address\": {
-                          \"street\": \"Kulas Light\",
-                          \"suite\": \"Apt. 556\",
-                          \"city\": \"Gwenborough\",
-                          \"zipcode\": \"92998-3874\",
-                          \"geo\": {
-                            \"lat\": \"-37.3159\",
-                            \"lng\": \"81.1496\"
-                          }
-                        },
-                        \"phone\": \"1-770-736-8031 x56442\",
-                        \"website\": \"hildegard.org\",
-                        \"company\": {
-                          \"name\": \"Romaguera-Crona\",
-                          \"catchPhrase\": \"Multi-layered client-server neural-net\",
-                          \"bs\": \"harness real-time e-markets\"
-                        }
-                    }
-                ]
-                """.utf8)
-    
-    static let parseFailStubbedData = Data("""
-                [
-                    {
-                        \"id\": 1,
-                        \"name\": \"Leanne Graham\",
-                        \"username\": \"Bret\",
-                        \"email\": \"Sincere@april.biz\"
-                    }
-                ]
-                """.utf8)
-    
     var mock: NetworkSessionMock!
     
     override func setUpWithError() throws {
@@ -61,7 +22,7 @@ class UsersListRequestTests: XCTestCase {
     }
 
     func testExpectSuccessFullResponseWhenValidJSONIsAvailable() throws {
-        self.mock.response = .success(type(of: self).successStubbedData)
+        self.mock.response = .success(Stubbed.successStubbedData)
         
         let service = UsersListWebService(baseURL: URL(string: "abc.com")!, networkSession: self.mock)
         let expectation = self.expectation(description: "Expect success")
@@ -104,7 +65,7 @@ class UsersListRequestTests: XCTestCase {
     }
     
     func testResponseParseFailError() {
-        self.mock.response = .success(type(of: self).parseFailStubbedData)
+        self.mock.response = .success(Stubbed.parseFailStubbedData)
         
         let service = UsersListWebService(baseURL: URL(string: "abc.com")!, networkSession: self.mock)
         let expectation = self.expectation(description: "Expect success")
