@@ -13,6 +13,7 @@ class UsersListViewController: UITableViewController {
     
     private let usersListViewModel = UsersListViewModel(with: UsersListWebService(baseURL: NetworkConstant.baseURL))
     private var users: [User]?
+    private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .medium)
     
     // MARK: - UIViewController Lifecycle
     
@@ -29,8 +30,14 @@ class UsersListViewController: UITableViewController {
     
     private func setupUI() {
         self.title = "Users"
+        self.setupActivityIndicator()
         self.setupLogoutButton()
         self.setupTableView()
+    }
+    
+    private func setupActivityIndicator() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: self.activityIndicator)
+        self.activityIndicator.hidesWhenStopped = true
     }
     
     private func setupLogoutButton() {
@@ -53,13 +60,12 @@ class UsersListViewController: UITableViewController {
         self.usersListViewModel.didstartLoading = { [weak self] in
             guard let _self = self else { return }
             
-            //show loader
+            _self.activityIndicator.startAnimating()
         }
         
         self.usersListViewModel.didEndLoading = { [weak self] in
             guard let _self = self else { return }
-            
-            //hide loader
+            _self.activityIndicator.stopAnimating()
         }
         
         self.usersListViewModel.didReloadUsersListData = { [weak self] users in
